@@ -9138,10 +9138,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'You cannot move yourself. You move along with the car.
+  m_Text: 'You cannot move yourself. You move along with the car (Triggers or W/S
+    on Keyboard).
 
 
-    Grip button to grab rhe steering wheel, Left Trigger to move backwards, Right
+    Grip button to grab the steering wheel, Left Trigger to move backwards, Right
     Trigger to move forward.
 
 

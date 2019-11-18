@@ -29,6 +29,8 @@ public class CarController : MonoBehaviour {
 
     private void Start() {
 
+        Cursor.visible = false;
+
         steeringWheel = steeringWheel.GetChild(0);
         
         foreach(WheelCollider w in wheels) {
