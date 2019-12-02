@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using VRTK;
+using OVR;
 
 public class CarController : MonoBehaviour {
 
@@ -25,8 +25,6 @@ public class CarController : MonoBehaviour {
     private float Turn; //turn axis
     private float Brake; //brake axis
 
-    private VRTK_ControllerEvents events;
-
     private void Start() {
 
         Cursor.visible = false;
@@ -35,28 +33,26 @@ public class CarController : MonoBehaviour {
 
             w.ConfigureVehicleSubsteps(5, 12, 15);
         }
-
-        events = GetComponent<VRTK_ControllerEvents>();
     }
 
     void FixedUpdate() {
 
-        //if (events.triggerTouched) {  // NEEDS TESTING
+        Forward = OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, OVRInput.Controller.RTouch);
+        BackWards = OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, OVRInput.Controller.LTouch);
 
-        //    Forward = events.GetTriggerAxis();
-        //    BackWards = events.GetTriggerAxis();  // how do we get the correct hand (left)?
+        if ((Forward > 0) || (BackWards > 0)) {  // NEEDS TESTING
 
-        //    Direction = Forward - BackWards;
+            Direction = Forward - BackWards;
 
-        //} else {
+        } else {
 
             Forward = Input.GetAxis("Vertical");
 
             Direction = Forward;
-        //}
+        }
 
         Turn = ConvertSteeringAngle(GetSteeringAngle());
-        Brake = Input.GetAxis("Jump");
+        Brake = OVRInput.Get(OVRInput.Button.PrimaryHandTrigger) ? OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger) : Input.GetAxis("Jump");
 
         wheels[0].steerAngle = maxSteerAngle * Turn;
         wheels[1].steerAngle = maxSteerAngle * Turn;
