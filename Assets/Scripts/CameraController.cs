@@ -1,41 +1,62 @@
-﻿
-// CURRENTLY TESTING! NOT TO BE USED YET!
-
+﻿using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
-using VRTK;
 
 public class CameraController : MonoBehaviour {
 
-    [SerializeField] private Transform cameraPivot;
-    [SerializeField] private Transform[] cameraPoints;
+    [SerializeField] private Transform camerasParent;
+    private List<GameObject> cameras;
+
+    private int currentCamera = 0;
+
+    private void Start() {
+
+        cameras = new List<GameObject>();
+
+        StartCoroutine(GetCameras());
+    }
 
     void Update() {
 
         SwitchCamera();
     }
 
-    private void SwitchCamera() {
+    private IEnumerator GetCameras() {
 
-        if (Input.GetKeyDown(KeyCode.E)) {
+        yield return new WaitForSeconds(1);
 
-            for (int i = 0; i < cameraPoints.Length; i++) {
+        cameras.Add(Camera.main.gameObject);
 
-                if (i != cameraPoints.Length) {
+        foreach (Transform t in camerasParent) {
 
-                    SetCameraPos(i);
-
-                } else {
-
-                    SetCameraPos(0); // prevent array overflow
-                }
-            }
+            cameras.Add(t.gameObject);
         }
     }
 
-    private void SetCameraPos(int i) {
+    private void SwitchCamera() {
 
-        cameraPivot.SetParent(cameraPoints[i], false);
-        //cameraPivot.parent = cameraPoints[i];
-        //cameraPivot.position = Vector3.zero;
+        if (Input.GetKeyDown(KeyCode.E) || OVRInput.Get(OVRInput.Button.Two)) {
+
+            switch (currentCamera) {
+
+                case 0:
+                    cameras[0].SetActive(false);
+                    cameras[1].SetActive(true);
+                    currentCamera++;
+                    break;
+
+                case 1:
+                    cameras[1].SetActive(false);
+                    cameras[2].SetActive(true);
+                    currentCamera++;
+                    break;
+
+                case 2:
+                    cameras[2].SetActive(false);
+                    cameras[0].SetActive(true);
+                    currentCamera = 0;
+                    break;
+            }
+        }   
     }
 }
