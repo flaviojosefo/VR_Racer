@@ -30,8 +30,6 @@ public class CarController : MonoBehaviour {
     private void Start() {
 
         Cursor.visible = false;
-
-        steeringWheel = steeringWheel.GetChild(0);
         
         foreach(WheelCollider w in wheels) {
 
@@ -43,19 +41,19 @@ public class CarController : MonoBehaviour {
 
     void FixedUpdate() {
 
-        if (events.triggerTouched) {  // NEEDS TESTING
+        //if (events.triggerTouched) {  // NEEDS TESTING
 
-            Forward = events.GetTriggerAxis();
-            BackWards = events.GetTriggerAxis();  // how do we get the correct hand (left)?
+        //    Forward = events.GetTriggerAxis();
+        //    BackWards = events.GetTriggerAxis();  // how do we get the correct hand (left)?
 
-            Direction = Forward - BackWards;
+        //    Direction = Forward - BackWards;
 
-        } else {
+        //} else {
 
             Forward = Input.GetAxis("Vertical");
 
             Direction = Forward;
-        }
+        //}
 
         Turn = ConvertSteeringAngle(GetSteeringAngle());
         Brake = Input.GetAxis("Jump");
