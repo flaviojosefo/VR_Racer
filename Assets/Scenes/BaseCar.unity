@@ -11041,8 +11041,8 @@ MonoBehaviour:
     Trigger to move forward.
 
 
-    Press the Menu Button (R on Keyboard) to switch to custom hand models (avatar
-    hands).'
+    Press the Menu Button to switch to custom hand models and X or A to reset the
+    car in the case of an accident ;)'
 --- !u!114 &114706515791128736
 MonoBehaviour:
   m_ObjectHideFlags: 0
