@@ -9,13 +9,6 @@ public class CameraController : MonoBehaviour {
     [SerializeField] private Transform cameraPivot;
     [SerializeField] private Transform[] cameraPoints;
 
-    private VRTK_ControllerEvents events;
-
-    private void Start() {
-
-        events = GetComponent<VRTK_ControllerEvents>();
-    }
-
     void Update() {
 
         SwitchCamera();
@@ -23,7 +16,7 @@ public class CameraController : MonoBehaviour {
 
     private void SwitchCamera() {
 
-        if (events.buttonOnePressed) {
+        if (Input.GetKeyDown(KeyCode.E)) {
 
             for (int i = 0; i < cameraPoints.Length; i++) {
 
