@@ -90,7 +90,7 @@ public class CarController : MonoBehaviour {
 
     private void ResetCar() {
 
-        if (Input.GetKeyDown(resetKey)) {
+        if (Input.GetKeyDown(resetKey) || OVRInput.Get(OVRInput.Button.One)) {
 
             transform.rotation = Quaternion.identity;
             neck.localRotation = Quaternion.identity;
