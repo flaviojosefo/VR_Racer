@@ -52,7 +52,7 @@ public class CarController : MonoBehaviour {
         }
 
         Turn = ConvertSteeringAngle(GetSteeringAngle());
-        Brake = OVRInput.Get(OVRInput.Button.PrimaryHandTrigger) ? OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger) : Input.GetAxis("Jump");
+        Brake = OVRInput.Get(OVRInput.Button.PrimaryThumbstickDown) ? 1 : Input.GetAxis("Jump");
 
         wheels[0].steerAngle = maxSteerAngle * Turn;
         wheels[1].steerAngle = maxSteerAngle * Turn;
