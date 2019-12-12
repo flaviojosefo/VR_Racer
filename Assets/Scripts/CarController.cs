@@ -40,7 +40,7 @@ public class CarController : MonoBehaviour {
         Forward = OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, OVRInput.Controller.RTouch);
         BackWards = OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, OVRInput.Controller.LTouch);
 
-        if ((Forward > 0) || (BackWards > 0)) {  // NEEDS TESTING
+        if ((Forward > 0) || (BackWards > 0)) {
 
             Direction = Forward - BackWards;
 
@@ -90,7 +90,7 @@ public class CarController : MonoBehaviour {
 
     private void ResetCar() {
 
-        if (Input.GetKeyDown(resetKey) || OVRInput.Get(OVRInput.Button.One)) {
+        if (Input.GetKeyDown(resetKey) || OVRInput.Get(OVRInput.Button.PrimaryThumbstick)) {
 
             transform.rotation = Quaternion.identity;
             neck.localRotation = Quaternion.identity;
@@ -99,16 +99,16 @@ public class CarController : MonoBehaviour {
 
     private float GetSteeringAngle() {
 
-        float angle = steeringWheel.localRotation.eulerAngles.y;
+        float angle = steeringWheel.localRotation.eulerAngles.z;
 
-        if (steeringWheel.localRotation.eulerAngles.y > 180) {
+        if (steeringWheel.localRotation.eulerAngles.z > 180) {
 
             angle -= 360;
 
-            return angle;
+            return -angle;
         }
 
-        return angle;
+        return -angle;
     }
 
     private float ConvertSteeringAngle(float angle) {

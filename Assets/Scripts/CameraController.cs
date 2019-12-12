@@ -35,7 +35,7 @@ public class CameraController : MonoBehaviour {
 
     private void SwitchCamera() {
 
-        if (Input.GetKeyDown(KeyCode.E) || OVRInput.GetDown(OVRInput.Button.Two)) {
+        if (Input.GetKeyDown(KeyCode.E) || OVRInput.GetDown(OVRInput.Button.One)) {
 
             switch (currentCamera) {
 
