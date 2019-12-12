@@ -11797,10 +11797,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 50
+    m_FontSize: 35
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 1
+    m_MinSize: 0
     m_MaxSize: 300
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -11808,16 +11808,42 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'You cannot move yourself. You move along with the car (Triggers or W/S
-    on Keyboard).
+  m_Text: 'Hello!
 
 
-    Grip button to grab the steering wheel, Left Trigger to move backwards, Right
-    Trigger to move forward.
+    Bellow you''ll find a list of all possible actions:
 
 
-    Press the Menu Button to switch to custom hand models and X or A to reset the
-    car in the case of an accident ;)'
+    Grip Buttons (Hold): Move Steering Wheel
+
+
+    Right Trigger: Move Forward
+
+
+    Left Trigger: Move Backwards
+
+
+    B/Y Buttons: Activate Custom Hand Models
+
+
+    A/X Buttons: Switch Camera Views
+
+
+    Thumbsticks (Pull Back): Brake
+
+
+    Thumbsticks (Press): Reset Car Rotation
+
+
+    For the best possible experience, position yourself correctly inside the car and
+    try to stay still, moving only your head. Race against time and beat your best
+    score!
+
+
+    Have Fun :D
+
+
+'
 --- !u!114 &114706515791128736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11955,8 +11981,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1000, y: 500}
+  m_AnchoredPosition: {x: -0, y: -210}
+  m_SizeDelta: {x: 1000, y: 919.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224339459190181036
 RectTransform:
@@ -11985,7 +12011,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1283439038688588}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 224401780284452526}
@@ -11993,8 +12019,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1100, y: 750}
+  m_AnchoredPosition: {x: -0, y: -151}
+  m_SizeDelta: {x: 1100, y: 1100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224401780284452526
 RectTransform:
@@ -12004,7 +12030,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1016561012834846}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -6.445}
+  m_LocalPosition: {x: 0, y: 0, z: -6.11}
   m_LocalScale: {x: 0.001, y: 0.001, z: 0.001}
   m_Children:
   - {fileID: 224371738176040826}
@@ -12016,7 +12042,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 9.409007, y: -2.156}
+  m_AnchoredPosition: {x: 9.409, y: -1.809}
   m_SizeDelta: {x: 1000, y: 700}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224468992086817500
