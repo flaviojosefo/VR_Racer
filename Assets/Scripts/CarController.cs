@@ -25,11 +25,15 @@ public class CarController : MonoBehaviour {
     private float Turn; //turn axis
     private float Brake; //brake axis
 
+    private AudioManager audioManager;
+
     private void Start() {
 
         Cursor.visible = false;
-        
-        foreach(WheelCollider w in wheels) {
+
+        audioManager = AudioManager.Instance;
+
+        foreach (WheelCollider w in wheels) {
 
             w.ConfigureVehicleSubsteps(5, 12, 15);
         }

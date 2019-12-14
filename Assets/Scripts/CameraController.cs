@@ -9,9 +9,13 @@ public class CameraController : MonoBehaviour {
 
     private int currentCamera = 0;
 
+    private AudioManager audioManager;
+
     private void Start() {
 
         cameras = new List<GameObject>();
+
+        audioManager = AudioManager.Instance;
 
         StartCoroutine(GetCameras());
     }
@@ -43,18 +47,21 @@ public class CameraController : MonoBehaviour {
                     cameras[0].SetActive(false);
                     cameras[1].SetActive(true);
                     currentCamera++;
+                    audioManager.AudioSource.spatialBlend = 1.0f;
                     break;
 
                 case 1:
                     cameras[1].SetActive(false);
                     cameras[2].SetActive(true);
                     currentCamera++;
+                    audioManager.AudioSource.spatialBlend = 0.5f;
                     break;
 
                 case 2:
                     cameras[2].SetActive(false);
                     cameras[0].SetActive(true);
                     currentCamera = 0;
+                    audioManager.AudioSource.spatialBlend = 0.0f;
                     break;
             }
         }   
