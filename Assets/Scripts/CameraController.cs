@@ -54,7 +54,7 @@ public class CameraController : MonoBehaviour {
                     cameras[1].SetActive(false);
                     cameras[2].SetActive(true);
                     currentCamera++;
-                    audioManager.AudioSource.spatialBlend = 0.5f;
+                    audioManager.AudioSource.spatialBlend = 0.75f;
                     break;
 
                 case 2:
